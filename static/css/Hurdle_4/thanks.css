@@ -1,0 +1,275 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./media/car.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+#message-box {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px; /* Set a maximum width for the message box */
+  margin: 20px;
+}
+
+#message {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff; /* Text color inside the message box */
+}
+#content {
+  text-align: center;
+
+  background-color: rgba(45, 231, 245, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+}
+.dialogoverlay{
+  margin-top: 7%;
+  margin-bottom: 41%;
+  margin-left: 79%;
+  margin-right: 1%;
+  background-color: rgb(55, 57, 59,0.5);
+  padding: 50px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 41%;
+  height: 32%;
+
+}
+
+#arrow-button {
+  font-size: 150px; /* Increase the arrow size */
+  color: #2980b9; /* #2980b9 color for the flashing arrow button */
+  animation: flash 1s infinite; /* Flashing animation */
+  cursor: pointer;
+  position: absolute;
+  right: 350px; /* Adjust the right distance as needed */
+  top: 10%; /* Position vertically centered */
+  transform: translateY(-50%); /* Offset for vertical centering */
+}
+
+#next-hurdle-button {
+  font-size: 24px;
+  color: #2980b9; /* #2980b9 color for the flashy button */
+  animation: flash 1s infinite;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.option {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 4px 4px rgba(23, 162, 184, 0.7); /* Box shadow with the desired color */
+  cursor: pointer;
+  position: absolute;
+  top: 25%;
+  right: 65%;
+  animation: fadeIn 5s ease-in;
+}
+.option:hover {
+  color: #17a2b8;
+  transition: 0.6s;
+  background-color: white;
+}
+.option1 {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 4px 4px rgba(23, 162, 184, 0.7); /* Box shadow with the desired color */
+  cursor: pointer;
+  position: absolute;
+  top: 25%;
+  right: 75%;
+  animation: fadeIn 5s ease-in ;
+}
+.option1:hover {
+  color: #17a2b8;
+  transition: 0.6s;
+  background-color: white;
+}
+
+.person {
+  position: absolute;
+  top: 1%;
+  left: -1%;
+  width: 30%;
+}
+.para {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  position: absolute;
+  top: 7%;
+  left: 9%;
+  width: 30%;
+}
+
+/*  */
+@keyframes buttonFadeIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.para {
+  animation: buttonFadeIn 4s ease-out;
+}
+
+/*  */
+@keyframes buttonFadeIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+#person {
+  animation: buttonFadeIn 2s ease-out;
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+#message-box {
+  text-align: center;
+  animation: moveUpDown 3s infinite;
+}
+.btn-info {
+  text-align: center;
+  animation: buttonFadeIn 3s ease-in;
+}
+
+.option {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 4px 4px rgba(23, 162, 184, 0.7); /* Box shadow with the desired color */
+  cursor: pointer;
+}
+
+.option:hover {
+  color: #17a2b8;
+  transition: 0.6s;
+  background-color: white;
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+.title {
+  margin-top: 1rem;
+  text-align: center;
+  animation: moveUpDown 3s infinite;
+}
+.hurrah {
+  position: absolute;
+  top: 60%;
+  left: 4%;
+}
+.congrats {
+  position: absolute;
+  top: 48%;
+  right: 45%;
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.congrats {
+  animation: moveUpDown 5s infinite;
+}
+
+.hurrah {
+  animation: moveUpDown 3s infinite;
+}
+.accident {
+  position: absolute;
+  top: 57%;
+  left: 8%;
+  opacity: 0.7;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  padding-bottom: 89px;
+}

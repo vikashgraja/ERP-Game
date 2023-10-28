@@ -1,0 +1,267 @@
+/* General styles for the page */
+body {
+  overflow: hidden  ;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("./media/14.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 100vh;
+  opacity: 1;
+  position: relative;
+}
+
+/* Container for the entire content */
+#container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Message Box with Fade-In Animation */
+
+#message-box {
+  background: none; /* Remove white background */
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 10%;
+  left: 38%;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#message {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(30, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.dialogoverlay{
+  margin-top: 7%;
+  margin-bottom: 41%;
+  margin-left: 1%;
+  margin-right: 52%;
+  background-color: rgb(55, 57, 59,0.5);
+  padding: 50px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 41%;
+  height: 32%;
+
+}
+
+/* Comic Narrator Container */
+#comic-narrator {
+  position: absolute;
+  top: 2%;
+  left: -10%;
+  width: 30%;
+}
+
+#comic-narrator img {
+  width: 100%;
+  animation: fadeIn 5s ease-in-out;
+}
+
+/* Dialogue Box */
+#dialogue-box {
+  position: absolute;
+  top: 5%;
+  left: 9%;
+  width: 30%;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 20px;
+
+  animation: fadeIn 5s ease-in-out;
+}
+
+/* Dialogue Text */
+#dialogue-text {
+  font-size: 18px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Question Box Container */
+#question-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  opacity: 0;
+  animation: bounceIn 7s ease-in-out 5s forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#question {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+/* Option Box Container */
+#options {
+  background-color: transparent;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  opacity: 0;
+  animation: fadeIn 8s ease-in-out 4s forwards;
+  font-size: 20%;
+}
+
+/* Option Boxes with Hover Effect */
+.option-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+
+.accident {
+  position: absolute;
+  top: 10%;
+  left: 43%;
+  opacity: 0.6;
+}
+.yes {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+#message {
+  background: white;
+  opacity: 0.8;
+  color: white;
+  border-radius: 20px;
+}
+.accident {
+  position: absolute;
+  top: 45%;
+  left: 78%;
+}
+
+.accident {
+  position: absolute;
+  top: 70%;
+  left: 3%;
+  opacity: 0.51;
+  transform: translateY(-50%);
+  max-width: 800px;
+  text-align: center;
+  animation: moveUpDown 2s infinite;
+}
+
+.btn {
+  position: absolute;
+  top: 85%;
+  right: 10%;
+}
+.next {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 4px 4px rgba(23, 162, 184, 0.7); /* Box shadow with the desired color */
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  top: 90%;
+  right: 10%;
+  transition: color 0.6s, background-color 0.6s;
+}
+.next a {
+  color: white;
+}
+.next a:hover {
+  color: #17a2b8;
+  transition: color 0.6s, background-color 0.6s;
+}
+.next:hover {
+  color: #17a2b8 !important;
+  transition: 0.6s;
+  background-color: white;
+}
+
+.option {
+  position: absolute;
+  left: 18%;
+  top: 25%;
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 4px 4px rgba(23, 162, 184, 0.7); /* Box shadow with the desired color */
+  cursor: pointer;
+  z-index: 1000;
+  animation: fadeIn 7s ease-in-out;
+
+}
+
+.option:hover {
+  color: #17a2b8;
+  transition: 0.6s;
+  background-color: white;
+}
+
+.option a {
+  color: white;
+}
+.option a:hover {
+  color: #17a2b8;
+}
