@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/Hurdle_2/hurdle_Ques_Retry.css' %}">
+        <link rel="stylesheet" href="{% static 'time.css' %}">
+    <title>Car Drive Scenario</title>
+
+  </head>
+  <body>
+    <script src="{% static 'time.js' %}"></script>
+
+  <div class="options-">
+      <a href="{% url 'h2t' %}">
+        <button class="option1">Try Again</button>
+        </a>
+        <a href="{% url 'h2w' %}">
+        <button class="option">Go Without Indicator</button>
+        </a>
+</div>
+
+
+
+
+    <div id>
+      <img id="person" class="person " style="top: -7%;" src="{% static 'css/Hurdle_2/media/person1.png' %}"
+        alt="Comic Narrator" />
+    </div>
+    <div class="dialogoverlay">
+      <div class="para p-3">
+        <p id="para" class="text-capitalize fw-bold"><b>Oops… You got it wrong, but no worries, . </b><br>
+          try to answer again or you can still go ahead <br>
+          without using indicator. Don’t forget…time is running out. </p>
+      </div>
+    </div>
+    <p><span id="timer">00:00:00</span></p>
+
+
+        <script>
+          // Function to show the message box after 5 seconds
+          setTimeout(function() {
+            var messageBox = document.getElementById("message-box");
+            messageBox.style.display = "block"; // Display the message box
+          }, 3000); // 5000 milliseconds = 5 seconds
+
+        </script>
+         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+
+          let retryCount = 0; // Variable to track the number of times "Try Again" is clicked
+
+      // Function to handle the "Try Again" click
+      function handleRetryClick() {
+        if (retryCount === 0) {
+          // The first time "Try Again" is clicked, redirect to "retry_1.html"
+          window.location.href = "retry_1.html";
+        } else if (retryCount === 1) {
+          // The second time "Try Again" is clicked, redirect to a different HTML page
+          window.location.href = "exhausted options.html";
+        }
+        // You can add more conditions for subsequent clicks if needed
+      }
+
+      // Add a click event listener to the "Try Again" link
+      const retryLink = document.getElementById("retryLink");
+      retryLink.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent the default link behavior
+        retryCount++; // Increment the retry count
+        handleRetryClick(); // Call the function to handle the click
+      });
+
+
+
+
+          </script>
+
+      </div>
+    </script>
+  </script>
+  <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+
+      }
+      .flex{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .trail{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(8, 212, 243, 1);
+  background: rgba(8, 212, 243, 1)f;
+  position: fixed;
+  animation: come 0.5s linear forwards;
+}
+      @keyframes come{
+          0%{
+              transform: scale(0);
+          }
+          10%{
+              transform: scale(1) translateY(0px);
+              opacity: 1;
+          }
+          100%{
+              transform: scale(0) translateY(150px);
+              opacity: 0;
+          }
+
+      }
+  </style>
+
+
+</body class="flex">
+<!-- <h1>Mouse trail effect</h1> -->
+<script>
+  var body=document.body;
+
+  document.addEventListener('mousemove',(e)=>{
+      var elem=document.createElement('div');
+      elem.setAttribute('class','trail')
+      elem.setAttribute('style',`left: ${e.clientX - 10}px; top: ${e.clientY - 10}px;`);
+
+      elem.onanimationed=()=>{
+          elem.remove();
+      }
+      body.insertAdjacentElement('beforeend',elem);
+  })
+</script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/login/thanks.css' %}">
+        <title>Car Drive Scenario</title>
+
+
+
+
+    <div id="content">
+        <div id="robert"></div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <h1 style="color: aliceblue;">Thank You for Your Outstanding Ethics!</h1>
+        <b><p>Dear {{ name }},</p>
+          <p>Hyundai and our character, Robert, want to express our heartfelt gratitude for your exceptional ethics and commitment to making the world a better place.</p>
+          <p>Your actions have not gone unnoticed, and we are truly inspired by your dedication to ethical values. With your positive contributions, we can look forward to a brighter future for all.</p>
+          <p>Once again, thank you for being a beacon of ethics in our community.</p>
+          <p>Sincerely,</p>
+          <p>The Hyundai Team</p></b>
+    </div>
+
+
+
+    </head>
+    <body>
+        <div id="message-box mt-4">
+            <p id="line1"
+                class="col-md-6 bg-dark  m-auto text-info text-center fw-bold"
+                style="font-size: 2.4rem;border-radius: 20px;"></p>
+        </div>
+
+        <div id>
+            <img id="person" class="person " src="{% static 'css/Hurdle_4/media/person12.png' %}"
+                alt="Comic Narrator" />
+        </div>
+        <p><span id="timer">00:00:00</span></p>
+        <div>
+
+            <script>
+
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeWriter() {
+          if (lineIndex < dialogueText.length) {
+            const line = dialogueText[lineIndex];
+            if (charIndex < line.length) {
+              document.getElementById(`line${lineIndex + 1}`).innerHTML +=
+                line.charAt(charIndex);
+              charIndex++;
+              setTimeout(typeWriter, 150); // Adjust typing speed here
+            } else {
+              lineIndex++;
+              charIndex = 0;
+              setTimeout(typeWriter, 3000); // Delay between lines
+            }
+          }
+        }
+
+        // Start the typewriter effect when the page loads
+        window.onload = function () {
+          typeWriter();
+        };
+</script>
+
+            <script>
+  // Function to show the image after 5 seconds
+  setTimeout(function() {
+      var image = document.getElementById("personnn");
+      image.style.display = "block"; // Display the image
+  }, 5000); // 5000 milliseconds = 5 seconds
+</script>
+
+        </body>
+    </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/Hurdle_1/hurdle_Ques_Retry.css' %}">
+        <link rel="stylesheet" href="{% static 'time.css' %}">
+    <title>Game Page</title>
+
+  </head>
+  <body>
+    <div id="container">
+      <script src="{% static 'time.js' %}"></script>
+      <img src="{% static 'css/Hurdle_1/media/person1.png' %}" alt="Narrator" id="narrator" />
+
+
+      <div class="dialogoverlay">
+        <div id="message-box">
+          <p class="message-text">
+            Oops… You got it wrong, but no worries, try to answer again or you can still go for the
+            hammer. Don’t forget…time is running out.
+          </p>
+        </div>
+      </div>
+      <!-- Add the "Next Hurdle" button -->
+        <a href="{% url 'h1t' %}">
+        <button class="option">Try Again</button>
+        </a>
+        <a href="{% url 'h1w' %}">
+        <button class="option1">Use hammer</button>
+        </a>
+
+
+
+          <p><span id="timer">00:00:00</span></p>
+
+</script>
+    <script>
+      var body=document.body;
+
+      document.addEventListener('mousemove',(e)=>{
+        var elem=document.createElement('div');
+        elem.setAttribute('class','trail')
+        elem.setAttribute('style',`left: ${e.clientX - 10}px; top: ${e.clientY - 10}px;`);
+
+        elem.onanimationed=()=>{
+            elem.remove();
+        }
+        body.insertAdjacentElement('beforeend',elem);
+      })
+      </script>
+  </body>
+</html>

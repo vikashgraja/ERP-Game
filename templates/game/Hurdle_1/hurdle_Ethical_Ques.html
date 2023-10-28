@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/Hurdle_1/hurdle_Ethical_Ques.css' %}">
+        <link rel="stylesheet" href="{% static 'time.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drive Safely</title>
+
+    </head>
+    <body>
+      <script src="{% static 'timestart.js' %}"></script>
+      <div class="hidden-content" id="hiddenContent">
+
+      </div>
+
+      <p><span id="timer">00:00:00</span></p>
+        <div id="message-box">
+            <p
+                id="message"
+                style="
+          margin-top: -5rem;
+          font-size: 3rem !important;
+          color: rgba(74, 191, 237, 0.805);
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          margin-left: 150%;
+        ">
+                Hurdle 1
+            </p>
+        </div>
+        <div id="container">
+            <!-- Background Parallax Effect -->
+            <div id="background"></div>
+
+
+
+            <!-- Comic Narrator -->
+            <div id="comic-narrator">
+                <img src="{% static 'css/Hurdle_1/media/person1.png' %}" alt="Comic Narrator" />
+            </div>
+
+            <!-- Dialogue Box -->
+            <div class="dialogoverlay" >
+              <div id="dialogue-box">
+                  <b><p id="line1">Wow, you have got the all new i20 for a test drive. Are you excited?? Definitely you should be.
+                    Oh…No…The original keys are with the Audit Department. No worries though…. there is a spare key inside the car. But how do you get inside?? Don’t forget time is running out….
+              </div>
+            </div>
+
+
+
+            <!-- Option Box Container -->
+            <div id="options" >
+
+                <h3 class="text-center fw-bold text-dark" style="background-color: #fff!important;border-radius: 2rem;width:90%;"> To open the door:</h3>
+                <div class="option-container row">
+                  <form method="post">
+                  <button class="option1 col-md-5 blink-green bg-dark" style="margin-left: 1%" type="submit" name="E" value="E">
+
+                      Go to Audit Department and get original keys
+                      (Time⬆️)
+                  </button>
+                  <button class="option2 col-md-5 blink-red bg-dark" style="margin-right: 11% " type="submit" name="UE" value="UE">
+                       Use Hammer and break open the window to access spare key
+                      (Time⬇️)
+                  </button>
+                  {% csrf_token %}
+                </form>
+              </div>
+          </div>
+
+            <div class="overlay" id="overlay">
+              <div class="dialog-box">
+                  <div class="wrapper"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                  </svg>
+                  </div>
+                  <p class="diatext" style="text-align: center;">The game starts!!</p>
+
+                  <button class="ok-button" onclick="loadContent()">START  </button>
+              </div>
+          </div>
+
+    <script>
+      function showDialog() {
+          document.getElementById('overlay').style.display = 'flex';
+      }
+
+      function loadContent() {
+          // Create and append content to the hidden-content div
+          var hiddenContentDiv = document.getElementById('hiddenContent');
+
+
+          // Show the hidden content
+          hiddenContentDiv.style.display = 'block';
+
+          // Close the dialog
+          closeDialog();
+      }
+
+      function closeDialog() {
+          document.getElementById('overlay').style.display = 'none';
+      }
+
+      // Automatically show the dialog when the page loads (optional)
+      showDialog();
+  </script>
+  <script>
+    var body=document.body;
+
+    document.addEventListener('mousemove',(e)=>{
+      var elem=document.createElement('div');
+      elem.setAttribute('class','trail')
+      elem.setAttribute('style',`left: ${e.clientX - 10}px; top: ${e.clientY - 10}px;`);
+
+      elem.onanimationed=()=>{
+          elem.remove();
+      }
+      body.insertAdjacentElement('beforeend',elem);
+    })
+    </script>
+    </body>
+</html>

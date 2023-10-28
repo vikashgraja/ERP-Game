@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drive Safely</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/Hurdle_2/hurdle_Ethical_Ques.css' %}">
+        <link rel="stylesheet" href="{% static 'time.css' %}">
+
+    </head>
+    <body>
+    <script src="{% static 'time.js' %}"></script>
+    <p><span id="timer">00:00:00</span></p>
+
+      <div class="hidden-content" id="hiddenContent">
+        <style>
+          .message-box {
+          background-color: transparent; /* Remove the white background */
+          border: none; /* Add a border for visibility */
+           }
+
+          .option {
+          background-color: rgba(0, 0, 0, 0.6); /* Reduce the opacity (adjust as needed) */
+          color: #fff; /* Set text color to white for better visibility */
+          }
+          </style>
+
+
+          <div id="container">
+              <!-- Background Parallax Effect -->
+              <div id="background"></div>
+
+
+
+              <!-- Comic Narrator -->
+              <div id="comic-narrator">
+                  <img src="{% static 'css/Hurdle_2/media/person1.png' %}" alt="Comic Narrator" />
+              </div>
+
+              <!-- Dialogue Box -->
+              <div class="dialogoverlay">
+                <div id="dialogue-box">
+                    <b><p id="line1">"Please wear your seatbelt.
+                      You are at the Main Gate and you need to take the right turn towards Chennai City
+                       You have 2 options !</p></b>
+                </div>
+              </div>
+
+
+              <!-- Option Box Container -->
+              <div id="options" >
+
+                  <h3 class="text-center fw-bold text-dark p-3" style="background-color: #fff!important;border-radius: 2rem;"> Take the right turn </h3>
+                  <form method="post" >
+                    <div class="option-container options row">
+                      <button class="option1 col-md-5 blink-green option yes" type="submit" name="E" value="E">
+                          YES: Use the indicator and drive slow
+                      </button>
+                      <button class="option2 col-md-5 blink-red option yes" type="submit" name="UE" value="UE">
+                          NO: Go ahead without using indicator .
+                      </button>
+                  </div>
+                      {% csrf_token %}
+                  </form>
+                </div>
+            </div>
+      </div>
+
+  <div class="overlay" id="overlay">
+    <div class="dialog-box">
+        <div class="wrapper"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+        </div>
+        <p class="diatext" style="text-align: center;opacity: 1;">Welcome to hurdle 2!</p>
+
+        <button class="ok-button1" onclick="loadContent()">Lets Dive in!</button>
+    </div>
+  </div>
+
+    <script>
+      function showDialog() {
+          document.getElementById('overlay').style.display = 'flex';
+      }
+
+      function loadContent() {
+          // Create and append content to the hidden-content div
+          var hiddenContentDiv = document.getElementById('hiddenContent');
+
+
+          // Show the hidden content
+          hiddenContentDiv.style.display = 'block';
+
+          // Close the dialog
+          closeDialog();
+      }
+
+      function closeDialog() {
+          document.getElementById('overlay').style.display = 'none';
+      }
+
+      // Automatically show the dialog when the page loads (optional)
+      showDialog();
+  </script>
+  </script>
+  <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+
+      }
+      .flex{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .trail{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(8, 212, 243, 1);
+  background: rgba(8, 212, 243, 1)f;
+  position: fixed;
+  animation: come 0.5s linear forwards;
+}
+      @keyframes come{
+          0%{
+              transform: scale(0);
+          }
+          10%{
+              transform: scale(1) translateY(0px);
+              opacity: 1;
+          }
+          100%{
+              transform: scale(0) translateY(150px);
+              opacity: 0;
+          }
+
+      }
+  </style>
+
+
+<!-- <h1>Mouse trail effect</h1> -->
+<script>
+  var body=document.body;
+
+  document.addEventListener('mousemove',(e)=>{
+      var elem=document.createElement('div');
+      elem.setAttribute('class','trail')
+      elem.setAttribute('style',`left: ${e.clientX - 10}px; top: ${e.clientY - 10}px;`);
+
+      elem.onanimationed=()=>{
+          elem.remove();
+      }
+      body.insertAdjacentElement('beforeend',elem);
+  })
+</script>
+
+
+    </body>
+
+</html>
