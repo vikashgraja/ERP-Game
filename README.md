@@ -1,1 +1,1 @@
-# all
+# Ethics Awareness Game
